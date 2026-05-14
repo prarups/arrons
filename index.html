@@ -31,7 +31,7 @@
     }
 
     /* =========================
-       BALLOONS
+        BALLOONS
     ========================= */
 
     .balloon{
@@ -56,19 +56,12 @@
     }
 
     @keyframes floatUp{
-
-      0%{
-        transform:translateY(0) rotate(0deg);
-      }
-
-      100%{
-        transform:translateY(-150vh) rotate(20deg);
-      }
-
+      0%{ transform:translateY(0) rotate(0deg); }
+      100%{ transform:translateY(-150vh) rotate(20deg); }
     }
 
     /* =========================
-       MAIN CARD
+        MAIN CARD
     ========================= */
 
     .main-card{
@@ -87,17 +80,8 @@
     }
 
     @keyframes fadeIn{
-
-      from{
-        opacity:0;
-        transform:translateY(40px);
-      }
-
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-
+      from{ opacity:0; transform:translateY(40px); }
+      to{ opacity:1; transform:translateY(0); }
     }
 
     .title{
@@ -108,19 +92,9 @@
     }
 
     @keyframes pulse{
-
-      0%{
-        transform:scale(1);
-      }
-
-      50%{
-        transform:scale(1.05);
-      }
-
-      100%{
-        transform:scale(1);
-      }
-
+      0%{ transform:scale(1); }
+      50%{ transform:scale(1.05); }
+      100%{ transform:scale(1); }
     }
 
     .baby-image{
@@ -135,19 +109,12 @@
     }
 
     @keyframes zoom{
-
-      from{
-        transform:scale(1);
-      }
-
-      to{
-        transform:scale(1.05);
-      }
-
+      from{ transform:scale(1); }
+      to{ transform:scale(1.05); }
     }
 
     /* =========================
-       CAKE
+        CAKE
     ========================= */
 
     .cake-container{
@@ -200,19 +167,12 @@
     }
 
     @keyframes flicker{
-
-      from{
-        transform:scale(1);
-      }
-
-      to{
-        transform:scale(1.2);
-      }
-
+      from{ transform:scale(1); }
+      to{ transform:scale(1.2); }
     }
 
     /* =========================
-       DETAILS
+        DETAILS
     ========================= */
 
     .details-box{
@@ -223,13 +183,10 @@
       box-shadow:0 5px 20px rgba(0,0,0,0.1);
     }
 
-    .details-box h4{
-      color:#ff006e;
-      font-weight:700;
-    }
+    .details-box h4{ color:#ff006e; font-weight:700; }
 
     /* =========================
-       MAP
+        MAP
     ========================= */
 
     .map-box{
@@ -241,12 +198,7 @@
       z-index:10;
     }
 
-    iframe{
-      width:100%;
-      height:320px;
-      border:0;
-      display:block;
-    }
+    iframe{ width:100%; height:320px; border:0; display:block; }
 
     .map-btn{
       background:#ff006e;
@@ -260,13 +212,10 @@
       transition:0.3s;
     }
 
-    .map-btn:hover{
-      transform:scale(1.05);
-      color:white;
-    }
+    .map-btn:hover{ transform:scale(1.05); color:white; }
 
     /* =========================
-       MUSIC BUTTON
+        MUSIC BUTTON
     ========================= */
 
     #music-btn{
@@ -285,20 +234,9 @@
     }
 
     @media(max-width:768px){
-
-      .title{
-        font-size:2.7rem;
-      }
-
-      .baby-image{
-        width:220px;
-        height:220px;
-      }
-
-      .main-card{
-        padding:25px;
-      }
-
+      .title{ font-size:2.7rem; }
+      .baby-image{ width:220px; height:220px; }
+      .main-card{ padding:25px; }
     }
 
   </style>
@@ -307,360 +245,161 @@
 
 <body>
 
-  <!-- MUSIC -->
-
-  <audio id="bg-music" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=happy-birthday-120371.mp3" type="audio/mpeg">
+  <!-- MUSIC ELEMENT -->
+  <!-- 'autoplay' and 'muted' are added to help bypass browser locks -->
+  <audio id="bg-music" loop autoplay playsinline>
+    <source src="m.mp3" type="audio/mpeg">
   </audio>
+
+  <!-- Force Iframe Hack (Sometimes works on Android Chrome) -->
+  <iframe src="m.mp3" allow="autoplay" id="audio-iframe" style="display:none"></iframe>
 
   <button id="music-btn">
     🎵 Music
   </button>
 
-  <!-- MAIN -->
-
   <div class="container py-5">
-
     <div class="main-card">
-
-      <div class="mb-3 text-uppercase fw-bold text-secondary">
-        You Are Invited To
-      </div>
-
+      <div class="mb-3 text-uppercase fw-bold text-secondary">You Are Invited To</div>
       <h1 class="title">Aaron's</h1>
-
-      <h2 class="text-primary fw-bold">
-        1st Birthday Celebration
-      </h2>
-
+      <h2 class="text-primary fw-bold">1st Birthday Celebration</h2>
       <p class="mt-3 text-secondary fs-5">
-        With great joy and happiness,
-        we cordially invite you and your family
-        to celebrate the special day of our little prince.
+        With great joy and happiness, we cordially invite you and your family to celebrate the special day of our little prince.
       </p>
 
-      <!-- IMAGE -->
-
       <div class="mt-4">
-
-        <img
-          src="pic.jpeg"
-          alt="Baby Aaron"
-          class="baby-image">
-
+        <img src="pic.png" alt="Baby Aaron" class="baby-image">
       </div>
-
-      <!-- CAKE -->
 
       <div class="cake-container">
-
         <div class="candles">
-
-          <div class="candle">
-            <div class="flame"></div>
-          </div>
-
-          <div class="candle">
-            <div class="flame"></div>
-          </div>
-
-          <div class="candle">
-            <div class="flame"></div>
-          </div>
-
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
         </div>
-
         <div class="cake-top"></div>
         <div class="cake-bottom"></div>
-
       </div>
-
-      <!-- DETAILS -->
 
       <div class="details-box">
-
         <div class="row">
-
-          <div class="col-md-4 mb-3">
-            <h4>📅 Date</h4>
-            <p>15 / 05 / 2026</p>
-          </div>
-
-          <div class="col-md-4 mb-3">
-            <h4>⏰ Time</h4>
-            <p>6:00 PM Onwards</p>
-          </div>
-
-          <div class="col-md-4 mb-3">
-            <h4>🎉 Occasion</h4>
-            <p>Birthday Party</p>
-          </div>
-
+          <div class="col-md-4 mb-3"><h4>📅 Date</h4><p>15 / 05 / 2026</p></div>
+          <div class="col-md-4 mb-3"><h4>⏰ Time</h4><p>6:00 PM Onwards</p></div>
+          <div class="col-md-4 mb-3"><h4>🎉 Occasion</h4><p>Birthday Party</p></div>
         </div>
-
         <hr>
-
-        <!-- VENUE -->
-
         <div class="mt-4">
-
           <h4>📍 Venue</h4>
-
           <p style="line-height:1.9;">
-
             Ennore Viyabarigal Sangam <br>
-
             Kamaraj Nagar,<br>
-
             Kathivakkam High School Road,<br>
-
             Ennore, Chennai - 600057,<br>
-
             Tamil Nadu
-
           </p>
-
           <div class="map-box">
-
-            <iframe
-              src="https://maps.google.com/maps?q=Ennore%20Viyabarigal%20Sangam&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              allowfullscreen
-              loading="lazy">
-            </iframe>
-
+            <iframe src="https://maps.google.com/maps?q=Ennore%20Viyabarigal%20Sangam&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
           </div>
-
-          <a
-            href="https://share.google/9jX91lchxo8cj6fxU"
-            target="_blank"
-            class="map-btn">
-
-            📍 Open Location
-
-          </a>
-
+          <a href="https://share.google/9jX91lchxo8cj6fxU" target="_blank" class="map-btn">📍 Open Location</a>
         </div>
-
         <hr>
-
         <div class="mt-4">
-
           <h4>👨‍👩‍👦 Parents</h4>
-
           <p><strong>Father:</strong> Akash</p>
-
           <p><strong>Mother:</strong> Keerthana</p>
-
         </div>
-
         <div class="mt-4">
-
           <h4>👴 Grandparents</h4>
-
           <p>Samuvel</p>
-
           <p>Murugammal</p>
-
         </div>
-
         <div class="mt-4">
-
           <h4>🙏 Pastor / God Servant</h4>
-
           <p><strong>Rev. Solomon Loganathan</strong></p>
-
           <p>(Jesus Love Church)</p>
-
         </div>
-
       </div>
 
-      <div class="mt-5 fs-5 fw-semibold text-secondary">
-
-        Your graceful presence and blessings
-        will make this celebration more memorable 💖
-
-      </div>
-
-      <div class="mt-4 fs-5 fw-bold text-dark">
-
-        Warm Regards ❤️ <br>
-
-        Akash & Keerthana Family
-
-      </div>
-
+      <div class="mt-5 fs-5 fw-semibold text-secondary">Your graceful presence and blessings will make this celebration more memorable 💖</div>
+      <div class="mt-4 fs-5 fw-bold text-dark">Warm Regards ❤️ <br> Akash & Keerthana Family</div>
     </div>
-
   </div>
 
-  <!-- JAVASCRIPT -->
-
   <script>
-
     /* =========================
-       BALLOONS
+        STRICT FORCE AUTOPLAY
     ========================= */
+    const music = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-btn');
 
-    const colors = [
-      '#ff4d6d',
-      '#4d96ff',
-      '#ffd93d',
-      '#6bcb77',
-      '#ff8fab',
-      '#9b5de5',
-      '#ff7b00'
-    ];
+    // 1. Immediate play attempt
+    document.addEventListener("DOMContentLoaded", () => {
+        music.play().then(() => {
+            console.log("Autoplay started successfully!");
+        }).catch(err => {
+            console.log("Autoplay blocked by browser. Music will start on the slightest scroll.");
+        });
+    });
 
-    function createBalloon(){
+    // 2. The "Invisible Touch" Backup
+    // Even if they don't click, the moment they scroll or touch to see the invite, it plays.
+    ['touchstart', 'scroll', 'mousedown', 'keydown'].forEach(event => {
+        window.addEventListener(event, () => {
+            if (music.paused) {
+                music.play();
+                musicBtn.innerHTML = '🎵 Music On';
+            }
+        }, { once: true });
+    });
 
-      const balloon =
-      document.createElement('div');
-
-      balloon.classList.add('balloon');
-
-      balloon.style.left =
-      Math.random()*100 + 'vw';
-
-      balloon.style.background =
-      colors[Math.floor(
-        Math.random()*colors.length
-      )];
-
-      balloon.style.animationDuration =
-      (Math.random()*4 + 5) + 's';
-
-      balloon.style.width =
-      (Math.random()*30 + 50) + 'px';
-
-      balloon.style.height =
-      (Math.random()*30 + 70) + 'px';
-
-      document.body.appendChild(balloon);
-
-      setTimeout(()=>{
-
-        balloon.remove();
-
-      },10000);
-
-    }
-
-    setInterval(createBalloon,180);
-
-    for(let i=0;i<20;i++){
-
-      setTimeout(createBalloon,i*150);
-
-    }
-
-    /* =========================
-       MUSIC
-    ========================= */
-
-    const music =
-    document.getElementById('bg-music');
-
-    const musicBtn =
-    document.getElementById('music-btn');
-
-    document.body.addEventListener('click',()=>{
-
-      music.play();
-
-    },{once:true});
-
-    musicBtn.addEventListener('click',()=>{
-
-      if(music.paused){
-
+    musicBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); 
+      if (music.paused) {
         music.play();
-
-        musicBtn.innerHTML='🎵 Music On';
-
-      }else{
-
+        musicBtn.innerHTML = '🎵 Music On';
+      } else {
         music.pause();
-
-        musicBtn.innerHTML='🔇 Music Off';
-
+        musicBtn.innerHTML = '🔇 Music Off';
       }
-
     });
 
     /* =========================
-       FAST AUTO SCROLL
+        BALLOONS & SCROLL
     ========================= */
+    const colors = ['#ff4d6d','#4d96ff','#ffd93d','#6bcb77','#ff8fab','#9b5de5','#ff7b00'];
+    function createBalloon(){
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = Math.random()*100 + 'vw';
+      balloon.style.background = colors[Math.floor(Math.random()*colors.length)];
+      balloon.style.animationDuration = (Math.random()*4 + 5) + 's';
+      balloon.style.width = (Math.random()*30 + 50) + 'px';
+      balloon.style.height = (Math.random()*30 + 70) + 'px';
+      document.body.appendChild(balloon);
+      setTimeout(()=>{ balloon.remove(); },10000);
+    }
+    setInterval(createBalloon,180);
 
     let autoScroll = true;
-
     let direction = 1;
-
     let speed = 2.2;
 
-    function stopScroll(){
-
-      autoScroll = false;
-
-    }
-
-    window.addEventListener(
-      'touchstart',
-      stopScroll,
-      {passive:true}
-    );
-
-    window.addEventListener(
-      'wheel',
-      stopScroll,
-      {passive:true}
-    );
-
-    window.addEventListener(
-      'mousedown',
-      stopScroll
-    );
+    function stopScroll(){ autoScroll = false; }
+    window.addEventListener('touchstart', stopScroll, {passive:true});
+    window.addEventListener('wheel', stopScroll, {passive:true});
+    window.addEventListener('mousedown', stopScroll);
 
     function smoothScroll(){
-
       if(autoScroll){
-
-        window.scrollBy(
-          0,
-          speed * direction
-        );
-
-        const scrollTop =
-        window.pageYOffset;
-
-        const maxScroll =
-        document.documentElement.scrollHeight
-        - window.innerHeight;
-
-        if(scrollTop >= maxScroll){
-
-          direction = -1;
-
-        }
-
-        if(scrollTop <= 0){
-
-          direction = 1;
-
-        }
-
+        window.scrollBy(0, speed * direction);
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if(window.pageYOffset >= maxScroll){ direction = -1; }
+        if(window.pageYOffset <= 0){ direction = 1; }
       }
-
-      requestAnimationFrame(
-        smoothScroll
-      );
-
+      requestAnimationFrame(smoothScroll);
     }
-
     smoothScroll();
-
   </script>
 
 </body>
-
 </html>
